@@ -1,4 +1,12 @@
+
+
+
+
+
 <?php
+  
+  // Set up connection to the mySql database 
+  
   $hostname = "localhost";
   $username = "root";
   $password = "";

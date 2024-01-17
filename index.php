@@ -1,17 +1,28 @@
+
+<!-- Signup Page / Beginning Page-->
+
 <?php 
+
+// start a session to store user browser information 
   session_start();
+  // if the unique_id of the user has been inputted
   if(isset($_SESSION['unique_id'])){
+    // redirect to user.php
     header("location: users.php");
   }
 ?>
-
+<!-- including the header where holds the opening of the html page -->
 <?php include_once "header.php"; ?>
+
 <body>
   <div class="wrapper">
     <section class="form signup">
       <header>Realtime Chat App</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
-        <div class="error-text"></div>
+        
+        <!-- error would be displayed here -->
+        <div class="error-text"></div> 
+        
         <div class="name-details">
           <div class="field input">
             <label>First Name</label>
@@ -43,6 +54,7 @@
     </section>
   </div>
 
+  <!-- Validation  -->
   <script src="javascript/pass-show-hide.js"></script>
   <script src="javascript/signup.js"></script>
 
