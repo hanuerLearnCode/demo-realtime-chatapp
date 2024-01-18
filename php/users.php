@@ -1,6 +1,3 @@
-
-<!-- The Page after user has logged in successfully -->
-
 <?php
     session_start();
     include_once "config.php";
