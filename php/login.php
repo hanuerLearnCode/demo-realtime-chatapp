@@ -1,8 +1,17 @@
-<?php 
+<?php
+
+    // Model ?? 
+
     session_start();
     include_once "config.php";
+
+    // get the submitted data
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    /**
+     * validation
+     */
     if(!empty($email) && !empty($password)){
         $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
         if(mysqli_num_rows($sql) > 0){
