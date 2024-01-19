@@ -1,5 +1,7 @@
 
-/** User Controller */
+/**
+ * handle event on users.php
+ */
 
 const searchBar = document.querySelector(".search input"),
 searchIcon = document.querySelector(".search button"),
@@ -12,10 +14,10 @@ searchIcon.onclick = ()=>{
   // active search icon 
   searchIcon.classList.toggle("active");
   searchBar.focus();
-  // ?? 
+  // 
   if(searchBar.classList.contains("active")){
-    searchBar.value = "";
-    searchBar.classList.remove("active");
+    searchBar.value = ""; // no search input 
+    searchBar.classList.remove("active"); // turn off search bar
   }
 }
 
