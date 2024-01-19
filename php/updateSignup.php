@@ -24,9 +24,9 @@
     } 
     else 
     {
-        // checking if email already existed
-        $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
-        if(mysqli_num_rows($sql) > 0)
+    // checking if email already existed
+    $sql = mysqli_query($conn, "SELECT * FROM users WHERE email = '{$email}'");
+    if(mysqli_num_rows($sql) > 0)
         {
             exit ("$email - This email already exist!"); // announce fail
         }

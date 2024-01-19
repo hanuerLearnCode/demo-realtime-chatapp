@@ -42,4 +42,7 @@
     }
 
     $_SESSION['unique_id'] = $row['unique_id'];
-    echo "success"; // xhr.response
+    // echo "success"; // xhr.response
+    header("Location: users.php");
+
+?>
