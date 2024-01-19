@@ -15,7 +15,7 @@
 
     $status = "Offline now";
     $updateStatus = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = {$_GET['logout_id']}");
-    if($updateStatus){
+    if ($updateStatus) {
         session_unset();
         session_destroy();
         header("location: ../login.php");

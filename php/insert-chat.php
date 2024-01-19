@@ -1,4 +1,7 @@
 <?php 
+
+// save the msg to the db
+
     session_start();
     if(isset($_SESSION['unique_id'])){
         include_once "config.php";
