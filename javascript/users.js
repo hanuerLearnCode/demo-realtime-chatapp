@@ -37,13 +37,13 @@ searchBar.onkeyup = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
           let data = xhr.response;
-          usersList.innerHTML = data; // return the targeted user
+          usersList.innerHTML = data; // return the targeted user in the user list div
         }
     }
   }
   // ??
-  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhr.send("searchTerm=" + searchTerm);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); // endcoded the search term when sending the request to search.php
+  xhr.send("searchTerm=" + searchTerm); // send the search term to search.php
 }
 
 /** after 5s user stops inputting, return the data */
