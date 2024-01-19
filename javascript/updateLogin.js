@@ -11,12 +11,12 @@ form.onsubmit = (e) => {
 }
 
 continueBtn.onclick = () => {
-    console.log("btn onclick");
-    const xhr = new XMLHttpRequest();
+
+    var xhr = new XMLHttpRequest();
     console.log(xhr);
-    xhr.open('POST', 'php/updateLogin.php', true);
+    xhr.open("POST", "php/updateLogin.php", true);
     xhr.responseType = 'text';
-    console.log('something');
+
     xhr.onload = () => {
         console.log("xhr has been loaded");
         if (xhr.readyState === XMLHttpRequest.DONE) {

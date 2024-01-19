@@ -1,8 +1,3 @@
-
-
-
-
-
 <?php
   
   // Set up connection to the mySql database 

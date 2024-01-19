@@ -7,15 +7,14 @@
     header("location: users.php");
   }
   
-  include_once "header.php";
-?>
 
-<html>
+?>
+<?php  include_once "header.php"; ?>
 <body>
   <div class="wrapper">
     <section class="form login">
       <header>Realtime Chat App</header>
-      <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <form action="php/updateLogin.php" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="field input">
           <label>Email Address</label>
@@ -35,7 +34,7 @@
   </div>
   
   <script src="javascript/pass-show-hide.js"></script>
-  <script src="javascript/updateLogin.js"></script>
+  <script src="javascript/login.js"></script>
 
 </body>
 </html>

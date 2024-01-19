@@ -35,14 +35,13 @@
     
     // update user status in the db
     $status = "Active now";
-    $updateStatus = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = '{$getUserWhoseEmail['unique_id']}'");
+    $updateStatus = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = '{$userArray['unique_id']}'");
 
     if (!($updateStatus)) {
         exit ("Something went wrong. Please try again!");
     }
 
     $_SESSION['unique_id'] = $row['unique_id'];
-    // echo "success"; // xhr.response
+    echo "success"; // xhr.response - somehow this shit is not working? 
     header("Location: users.php");
-
 ?>
