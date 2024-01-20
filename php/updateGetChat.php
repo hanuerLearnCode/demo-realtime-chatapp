@@ -17,7 +17,7 @@
     WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
     OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
     // query the db
-    $query = mysqli_query($conn, $sql);
+    $query = mysqli_query($conn, $getMsgQuery);
 
     // if no msg is found
     if (mysqli_num_rows($query) < 1) {
@@ -32,6 +32,7 @@
                             <p>'. $row['msg'] .'</p>
                         </div>
                         </div>';
+            echo $output;
         }else{
             $output .= '<div class="chat incoming">
                         <img src="../php/images/'.$row['img'].'" alt="">
@@ -39,5 +40,6 @@
                             <p>'. $row['msg'] .'</p>
                         </div>
                         </div>';
+            echo $output;
         }
     }
