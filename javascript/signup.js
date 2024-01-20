@@ -17,8 +17,7 @@ continueBtn.onclick = ()=>{
     // creating an xml object
     let xhr = new XMLHttpRequest();
     // selecting the http method, connecting to the signup.php and stating that this method is asyncronous
-    xhr.open("POST", "php/updateSignup.php", true);
-    
+    xhr.open("POST", "../php/updateSignup.php", true);
     // set the response type
     xhr.responseType = "text";
     // loading the request
@@ -30,7 +29,7 @@ continueBtn.onclick = ()=>{
           let data = xhr.response.trim(); // get the response
           if (data  === "success")  // check if the response from the server is success
           {
-            window.location.href = "users.php"; // return to user.php
+            window.location.href = "../views/users.php"; // return to user.php
           } 
           else // display errors
           { 

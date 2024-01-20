@@ -5,23 +5,30 @@
     session_start();
     include_once "config.php";
 
-    // get the submitted data
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    // 
+    $email = $_POST['email'];
+    $password = $_POST['password'];
     
+    // get the submitted data
+    $email = mysqli_real_escape_string($conn, $email);
+    $password = mysqli_real_escape_string($conn, $password);
+
+    $errorText="";
+
     /**
      * validation
      */
     // check email
     if (empty($email) || empty($password)) {
-        exit("All input field are required");
+        exit("All input fields are required");
     }
 
     $getUserWhoseEmail = mysqli_query($conn, "SELECT * FROM users where email = '{$email}'");
     $numberOfReturnedUsers = mysqli_num_rows($getUserWhoseEmail);
 
-    if ($numberOfReturnedUsers < 0) {
-        exit ("$email - This email does not exist");
+    if ($numberOfReturnedUsers < 1) {
+        $errorText = "$email - This email does not exist";
+        exit($errorText);
     }
     
     // check password
@@ -30,7 +37,8 @@
     $returnedPassword = $userArray['password'];
 
     if ($userPassword != $returnedPassword) {
-        exit ("Email or Password is Incorrect");
+        $errorText = "Email or Password is Incorrect";
+        exit($errorText);
     }
     
     // update user status in the db
@@ -38,10 +46,11 @@
     $updateStatus = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE unique_id = '{$userArray['unique_id']}'");
 
     if (!($updateStatus)) {
-        exit ("Something went wrong. Please try again!");
+        $errorText = "Something went wrong. Please try again!";
+        exit($errorText);
     }
 
-    $_SESSION['unique_id'] = $row['unique_id'];
+    $_SESSION['unique_id'] = $userArray['unique_id'];
     echo "success"; // xhr.response - somehow this shit is not working? 
-    header("Location: users.php");
+    // header("Location: ../views/users.php");
 ?>

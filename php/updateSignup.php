@@ -1,7 +1,10 @@
 <?php
+
+// sign up controller
+
     session_start();
     // importing the db connection
-    include_once "config.php";
+    include_once "../php/config.php";
 
     // getting the actual data from the form
     $fname = mysqli_real_escape_string($conn, $_POST['fname']);
@@ -87,6 +90,7 @@
             $result = mysqli_fetch_assoc($select_sql2);
             $_SESSION['unique_id'] = $result['unique_id']; // check if the unique_id is matched
             echo "success";
+            // header("location: views\users.php");
         }
         else
         {

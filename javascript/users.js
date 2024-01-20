@@ -32,7 +32,7 @@ searchBar.onkeyup = ()=>{
   }
   // send request to serve-side
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/search.php", true);
+  xhr.open("POST", "../php/search.php", true);
   xhr.onload = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
@@ -49,7 +49,7 @@ searchBar.onkeyup = ()=>{
 /** after 5s user stops inputting, return the data */
 setInterval(() =>{
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", "php/users.php", true);
+  xhr.open("GET", "../php/users.php", true);
   xhr.onload = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){

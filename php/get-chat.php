@@ -1,4 +1,7 @@
 <?php 
+
+// display the msg to the window
+
     session_start();
     if(isset($_SESSION['unique_id'])){
         include_once "config.php";

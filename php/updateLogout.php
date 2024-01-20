@@ -1,4 +1,7 @@
 <?php
+
+// Log out controller
+
     session_start();
 
     if (!isset($_SESSION['unique_id'])) {
@@ -18,5 +21,5 @@
     if ($updateStatus) {
         session_unset();
         session_destroy();
-        header("location: ../login.php");
+        header("location: ../views/login.php");
     }
