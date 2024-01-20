@@ -46,10 +46,11 @@ searchBar.onkeyup = ()=>{
   xhr.send("searchTerm=" + searchTerm); // send the search term to search.php
 }
 
-/** after 5s user stops inputting, return the data */
-setInterval(() =>{
+/** return the data if user is not*/
+setInterval ( () => {
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "../php/users.php", true);
+  // console.log(xhr);
   xhr.onload = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){

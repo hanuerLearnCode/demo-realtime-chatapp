@@ -41,7 +41,7 @@
     </section>
   </div>
 
-  <script src="../javascript/users.js"></script>
+  <script src="../javascript/updateUsers.js"></script>
 
 </body>
 </html>

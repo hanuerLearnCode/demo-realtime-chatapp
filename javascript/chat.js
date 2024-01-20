@@ -28,7 +28,7 @@ inputField.onkeyup = ()=>{
 // when a msg is sent
 sendBtn.onclick = ()=>{
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/insert-chat.php", true); // data is sent to insert-chat.php
+    xhr.open("POST", "../php/insert-chat.php", true); // data is sent to insert-chat.php
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
@@ -51,7 +51,7 @@ chatBox.onmouseleave = ()=>{
 // refresh the chat window after 500s
 setInterval(() =>{
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/updateGetChat.php", true);
+    xhr.open("POST", "../php/updateGetChat.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){

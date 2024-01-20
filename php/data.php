@@ -1,5 +1,7 @@
 <?php
 
+// get users data
+
     // $query = $numberOfOtherUsers
     while ($row = mysqli_fetch_assoc($query)) {
         // get all the chat from table messages that satisfies one of these conditions:
@@ -33,9 +35,9 @@
         ($outgoing_id == $row['unique_id']) ? $hid_me = "hide" : $hid_me = "";
 
         // return the output in the user list div
-        $output .= '<a href="chat.php?user_id='. $row['unique_id'] .'">
+        $output .= '<a href="../views/chat.php?user_id='. $row['unique_id'] .'">
                     <div class="content">
-                    <img src="php/images/'. $row['img'] .'" alt="">
+                    <img src="../php/images/'. $row['img'] .'" alt="">
                     <div class="details">
                         <span>'. $row['fname']. " " . $row['lname'] .'</span>
                         <p>'. $you . $msg .'</p>

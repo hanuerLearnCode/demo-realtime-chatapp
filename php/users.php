@@ -1,4 +1,7 @@
 <?php
+
+// search and display users controller
+
     session_start();
     include_once "config.php";
     $outgoing_id = $_SESSION['unique_id'];
