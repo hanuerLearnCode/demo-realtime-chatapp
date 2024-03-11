@@ -12,6 +12,6 @@ Navigate to the project directory:
 cd demo-realtime-chatapp
 Open the index.html file in your preferred web browser to run the realtime chat app.
 ## Features
-Realtime communication
-Simple and intuitive interface
+Realtime communication,
+Simple and intuitive interface,
 Feel free to explore the code and modify it according to your needs.
