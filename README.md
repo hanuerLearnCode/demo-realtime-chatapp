@@ -9,7 +9,7 @@ This repository contains a demo for a realtime chat application.
    ```bash
    git clone https://github.com/hanuerLearnCode/demo-realtime-chatapp.git
 Navigate to the project directory:
-cd demo-realtime-chatapp
+cd demo-realtime-chatapp,
 Open the index.html file in your preferred web browser to run the realtime chat app.
 ## Features
 Realtime communication,
